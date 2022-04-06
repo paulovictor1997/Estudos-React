@@ -13,7 +13,7 @@ export default (props) =>
                 <p className="description">
                     Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip. 
                 </p>
-                <button type="button">Learn More</button>
+                <button type="button" className="button-1">Learn More</button>
             </div>
 
             <div className="card-content" id="green">
@@ -22,7 +22,7 @@ export default (props) =>
                 <p className="description">
                     Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures
                 </p>
-                <button type="button">Learn More</button>
+                <button type="button" className="button-2">Learn More</button>
             </div>
 
             <div className="card-content" id="dark-green">
@@ -31,7 +31,7 @@ export default (props) =>
                 <p className="description">
                     Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.
                 </p>
-                <button type="button">Learn More</button>
+                <button type="button" className="button-3">Learn More</button>
             </div>
         </div>
     </>

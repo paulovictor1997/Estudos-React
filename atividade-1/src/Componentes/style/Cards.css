@@ -48,6 +48,30 @@ button {
     cursor: pointer;
 }
 
+button.button-1:hover{
+    background-color: var(--cor2);
+    color: var(--cor1);
+    transition: 0.5s all;
+}
+
+button.button-2:hover{
+    background-color: var(--cor3);
+    color: var(--cor1);
+    transition: 0.5s all;
+}
+
+button.button-3:hover{
+    background-color: var(--cor4);
+    color: var(--cor1);
+    transition: 0.5s all;
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+}
+
 @media (max-width:900px){
     .content{
         display: flex;
