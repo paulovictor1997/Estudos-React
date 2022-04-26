@@ -1,0 +1,25 @@
+.MuiButton-contained {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    box-shadow: none;
+  }
+  
+  .MuiButton-containedPrimary {
+    background-color: var(--color-primary) !important;
+  }
+  
+  .MuiButton-containedPrimary:hover {
+    background-color: var(--color-primary-hover) !important;
+    box-shadow: none;
+  }
+  
+  .MuiButton-containedSecondary {
+    background-color: var(--color-light) !important;
+    color: var(--color-primary) !important;
+  }
+  
+  .MuiButton-containedSecondary:hover {
+    background-color: var(--color-grey) !important;
+    box-shadow: none;
+  }

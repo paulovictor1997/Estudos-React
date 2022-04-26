@@ -1,0 +1,70 @@
+.select-type-container {
+    position: relative;
+    margin-left: 30px;
+  }
+  
+  button.select-type {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 120px;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+    padding: 10px 13px;
+    cursor: pointer;
+  }
+  
+  button.select-type svg {
+    width: 10px;
+  }
+  
+  button.select-type.open svg {
+    transform: rotate(180deg);
+  }
+  
+  button.select-type div {
+    display: flex;
+    align-items: center;
+  }
+  
+  button.select-type div svg {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(0deg) !important;
+  }
+  
+  .type-list {
+    position: absolute;
+    top: 50px;
+    background-color: var(--color-light);
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.05);
+    padding: 10px;
+    color: var(--color-dark);
+  }
+  
+  .type-list .type-list-item {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 120px;
+    padding: 10px;
+  }
+  
+  .type-list .type-list-item:hover {
+    color: var(--color-primary);
+  }
+  
+  .type-list .type-list-item svg {
+    margin-right: 7px;
+  }

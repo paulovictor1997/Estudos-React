@@ -1,0 +1,30 @@
+.top-navigation .MuiAppBar-colorPrimary {
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 0px transparent;
+    padding: 15px 20px;
+  }
+  
+  .top-navigation .MuiAppBar-colorPrimary ul {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    list-style: none;
+  }
+  
+  .top-navigation .MuiAppBar-colorPrimary ul li {
+    padding: 0px 15px;
+  }
+  
+  .top-navigation .MuiAppBar-colorPrimary ul li:last-child {
+    padding-right: 0px;
+  }
+  
+  .top-navigation .MuiAppBar-colorPrimary ul li a {
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: all .15s ease-in-out;
+  }
+  
+  .top-navigation .MuiAppBar-colorPrimary ul li a:hover {
+    color: var(--color-primary);
+  }
