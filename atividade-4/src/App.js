@@ -1,8 +1,22 @@
 import './App.css';
+import Name from './Componentes/Name';
+import Lista from './Componentes/Lista';
 
 function App() {
 
-  const name = 'Paulo Victor';
+  return (
+    <div className="App">
+        <Name nome = 'Paulo Victor' data = '1997' idade = '25'/>
+        <Lista/>
+    </div>
+  );
+}
+
+export default App;
+
+
+/*
+ const name = 'Paulo Victor';
 
   function soma(a,b){
     return a + b
@@ -15,6 +29,5 @@ function App() {
       <p>Soma é : {soma(1,2)}</p>
     </div>
   );
-}
 
-export default App;
+*/
