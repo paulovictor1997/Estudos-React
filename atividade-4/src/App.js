@@ -1,6 +1,8 @@
 import './App.css';
 import Name from './Componentes/Name';
 import Lista from './Componentes/Lista';
+import Evento from './Componentes/Eventos';
+import Form from './Componentes/Forms';
 
 function App() {
 
@@ -8,6 +10,8 @@ function App() {
     <div className="App">
         <Name nome = 'Paulo Victor' data = '1997' idade = '25'/>
         <Lista/>
+        <Evento numero={1}/>
+        <Form/>
     </div>
   );
 }
