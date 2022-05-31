@@ -4,8 +4,11 @@ import Lista from './Componentes/Lista';
 import Evento from './Componentes/Eventos';
 import Form from './Componentes/Forms';
 import Condiocional from './Componentes/Condicional';
+import MinhaLista from './Componentes/MinhaLista';
 
 function App() {
+
+  const Meusitens = ['React','Vue','Angular']
 
   return (
     <div className="App">
@@ -14,6 +17,7 @@ function App() {
         <Evento/>
         <Form/>
         <Condiocional/>
+        <MinhaLista itens={Meusitens}/>
     </div>
   );
 }
