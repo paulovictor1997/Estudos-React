@@ -3,6 +3,7 @@ import Name from './Componentes/Name';
 import Lista from './Componentes/Lista';
 import Evento from './Componentes/Eventos';
 import Form from './Componentes/Forms';
+import Condiocional from './Componentes/Condicional';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Lista/>
         <Evento/>
         <Form/>
+        <Condiocional/>
     </div>
   );
 }
