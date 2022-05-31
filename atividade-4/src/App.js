@@ -10,7 +10,7 @@ function App() {
     <div className="App">
         <Name nome = 'Paulo Victor' data = '1997' idade = '25'/>
         <Lista/>
-        <Evento numero={1}/>
+        <Evento/>
         <Form/>
     </div>
   );
