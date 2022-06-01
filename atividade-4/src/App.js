@@ -62,4 +62,32 @@ export default App;
     </div>
   );
 
+import Name from './Componentes/Name';
+import Lista from './Componentes/Lista';
+import Evento from './Componentes/Eventos';
+import Form from './Componentes/Forms';
+import Condiocional from './Componentes/Condicional';
+//import MinhaLista from './Componentes/MinhaLista';
+import SeuNome from './Componentes/StateLift/SeuNome';
+import Saudacao from './Componentes/StateLift/Saudacao';
+
+import { useState } from "react"
+
+//Exemplo do  State Lift
+  const [nome,setNome] = useState()
+  
+
+  return (
+    <div className="App">
+        <Name nome = 'Paulo Victor' data = '1997' idade = '25'/>
+        <Lista/>
+        <Evento/>
+        <Form/>
+        <Condiocional/>
+        <SeuNome setNome={setNome}/>
+        <Saudacao nome={nome}/>
+        
+    </div>
+  );
+
 */
