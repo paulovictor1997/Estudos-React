@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route} from 'react-router-dom';
 import Home from './componentes/pages/Home';
 import Empresa from './componentes/pages/Empresa';
 import Contato from './componentes/pages/Contato';
@@ -30,9 +30,7 @@ export default function App() {
                 <Route exact path = "/Projetos">
                     <Projetos/>
                 </Route>
-
-
-           </Routes>
+            </Routes>
        </Router>
        </>
         
