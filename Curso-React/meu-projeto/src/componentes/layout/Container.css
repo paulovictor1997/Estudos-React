@@ -4,9 +4,10 @@
     justify-content: space-between;
     margin: 0 auto;
     flex-wrap: wrap;
-}
+    padding: 10px;
+}    
 
-.min_heigth{ height: 75vh;}
+.min_heigth{ height: 100vh;}
 .start{justify-content: flex-start;}
 
 .colum{
