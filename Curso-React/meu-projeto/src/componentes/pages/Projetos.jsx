@@ -9,7 +9,7 @@ export default function Projetos(){
     function createPost(project){
       //Inicializando o cost e o services
       project.const = 0;
-      project.services = 0;
+      project.services = [];
 
       fetch('http://localhost:5000/projects',{
         method:'POST',
@@ -21,7 +21,7 @@ export default function Projetos(){
        .then((resp)=>resp.json())
        .then((data) =>{
          console.log(data)
-         //Redirect
+         //Redirecionando para a página de projetos feitos.
          navigate('/Projects',{message:'Projeto criado com succeso'})
        })
        .catch((error) => console.log(error))
