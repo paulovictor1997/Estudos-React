@@ -22,7 +22,7 @@ export default function Projetos(){
        .then((data) =>{
          console.log(data)
          //Redirecionando para a página de projetos feitos.
-         navigate('/Projects',{message:'Projeto criado com succeso'})
+         navigate('/Projects',{state:{message:'Projeto criado com succeso'}})
        })
        .catch((error) => console.log(error))
     }
