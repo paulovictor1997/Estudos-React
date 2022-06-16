@@ -3,20 +3,24 @@ import { useLocation } from "react-router-dom";
 import Message from "../layout/Message";
 import './Projects.css';
 import Container from '../layout/Container';
+import Load from "../layout/Load";
 import LinkButton from '../layout/LinkButton';
 import ProjectCard from "../projeto_form/ProjectCard";
 
 export default function Projects(){
     //Criando os projetos
     const [projects,setProjects] = useState([])
+    //Criando tela de load
+    const [removeLoading,setRemoveLoading] = useState(false);
 
     const location = useLocation()
     let message = ''
     if(location.state){
         message = location.state.message
     }
-
+   
     useEffect(()=>{
+        setTimeout(()=>{
         fetch('http://localhost:5000/projects',{
             method:'GET',
             headers:{
@@ -27,10 +31,12 @@ export default function Projects(){
         .then((data)=>{
             console.log(data)
             setProjects(data);
+            setRemoveLoading(true)
         })
         .catch((error)=>console.log(error))
-    },[])
+        },3000)
 
+    },[])
     return(
         <div className="project_container">
             <div className="title_container">
@@ -47,6 +53,10 @@ export default function Projects(){
                   
                   />)  
                 }
+                {!removeLoading && <Load/>}
+                {removeLoading && projects.length === 0 (
+                    <p>Nenhum projeto cadastrado.</p>
+                )}
             </Container>
         </div>
     )
