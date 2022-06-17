@@ -37,6 +37,20 @@ export default function Projects(){
         },3000)
 
     },[])
+
+    function removeProject(id){
+      fetch(`http://localhost:5000/projects/${id}`,{
+        method:'DELETE',
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+      }).then(resp => resp.json())
+       .then(data =>{
+        setProjects(projects.filter((project)=> project.id !== id))
+        //MENSAGEM DE REMOÇÃO
+       })
+    }
+
     return(
         <div className="project_container">
             <div className="title_container">
@@ -50,14 +64,17 @@ export default function Projects(){
                   budget={project.budget}
                   category={project.category.name}
                   key={project.id}
-                  
-                  />)  
-                }
+                  handleRemove={removeProject}
+                  />
+                )}
                 {!removeLoading && <Load/>}
-                {removeLoading && projects.length === 0 (
+                {removeLoading && projects.length === 0 && (
                     <p>Nenhum projeto cadastrado.</p>
                 )}
+                
             </Container>
         </div>
     )
 }
+
+
