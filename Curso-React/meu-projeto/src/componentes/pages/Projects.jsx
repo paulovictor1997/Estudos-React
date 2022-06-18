@@ -42,13 +42,15 @@ export default function Projects(){
       fetch(`http://localhost:5000/projects/${id}`,{
         method:'DELETE',
         headers:{
-            'Content-Type' : 'application/json'
+            'Content-Type' : 'application/json',
         },
-      }).then(resp => resp.json())
-       .then(data =>{
+      })
+       .then((resp) => resp.json())
+       .then((data) =>{
         setProjects(projects.filter((project)=> project.id !== id))
         //MENSAGEM DE REMOÇÃO
        })
+       .catch(error=> console.log(error))
     }
 
     return(
