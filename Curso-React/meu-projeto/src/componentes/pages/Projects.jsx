@@ -9,9 +9,10 @@ import ProjectCard from "../projeto_form/ProjectCard";
 
 export default function Projects(){
     //Criando os projetos
-    const [projects,setProjects] = useState([])
+    const [projects,setProjects] = useState([]);
     //Criando tela de load
     const [removeLoading,setRemoveLoading] = useState(false);
+    const [projectMessage,setProjectMessage] = useState('');
 
     const location = useLocation()
     let message = ''
@@ -49,6 +50,7 @@ export default function Projects(){
        .then((data) =>{
         setProjects(projects.filter((project)=> project.id !== id))
         //MENSAGEM DE REMOÇÃO
+        setProjectMessage('Projeto Removido com sucesso !')
        })
        .catch(error=> console.log(error))
     }
@@ -60,12 +62,14 @@ export default function Projects(){
                 <LinkButton to='/projetos' text='Criar Projeto'/>
             </div>
             {message && <Message type='success' msg = {message}/>}
+            {projectMessage && <Message type='error' msg = {projectMessage}/>}
             <Container className = 'start'>
                 {projects.length > 0 && 
                   projects.map((project)=> <ProjectCard name={project.name}
                   budget={project.budget}
                   category={project.category.name}
-                  key={project.id}
+                  id = {project.id}
+                  key= {project.id}
                   handleRemove={removeProject}
                   />
                 )}

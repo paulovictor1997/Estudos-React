@@ -1,39 +1,6 @@
 {
   "projects": [
     {
-      "name": "teee",
-      "budget": "5000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "const": 0,
-      "services": 0,
-      "id": 1
-    },
-    {
-      "name": "teste",
-      "budget": "500",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "const": 0,
-      "services": 0,
-      "id": 2
-    },
-    {
-      "name": "Paulo Victor",
-      "budget": "2333",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "const": 0,
-      "services": 0,
-      "id": 3
-    },
-    {
       "name": "Front-End",
       "budget": "2500",
       "category": {
@@ -45,15 +12,26 @@
       "id": 4
     },
     {
-      "name": "backend python",
-      "budget": "1600",
+      "name": "Redes",
+      "budget": "2000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "const": 0,
+      "services": [],
+      "id": 5
+    },
+    {
+      "name": "Backend",
+      "budget": "5000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
       "const": 0,
       "services": [],
-      "id": 5
+      "id": 6
     }
   ],
   "categories": [
