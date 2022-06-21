@@ -8,6 +8,7 @@ import Projects from './componentes/pages/Projects';
 import Container from './componentes/layout/Container';
 import Navbar from './componentes/layout/Navbar';
 import Footer from './componentes/layout/Footer';
+import Project from './componentes/pages/Project';
 
 export default function App() {
     return(
@@ -19,10 +20,11 @@ export default function App() {
          <Container>
            <Routes>
                <Route exact path='/'element ={<Home/>} />
-               <Route exact path = "/Empresa" element ={<Empresa/>}/>
-               <Route exact path = "/Contato" element ={<Contato/>}/>
-               <Route exact path = "/Projetos" element ={<Projetos/>}/>
+               <Route exact path = "/Empresa" element = {<Empresa/>}/>
+               <Route exact path = "/Contato" element = {<Contato/>}/>
+               <Route exact path = "/Projetos" element = {<Projetos/>}/>
                <Route exact path = "/Projects" element = {<Projects/>}/>
+               <Route exact path="/project/:id" element = {<Project/>}/>
             </Routes>
          </Container>
 
