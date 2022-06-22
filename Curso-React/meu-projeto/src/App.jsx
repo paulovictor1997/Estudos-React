@@ -10,9 +10,11 @@ import Navbar from "./componentes/layout/Navbar";
 import Footer from "./componentes/layout/Footer";
 import Project from "./componentes/pages/Project";
 
+import styles from "./App.module.css"
+
 export default function App() {
   return (
-    <>
+    <main className={styles.principal_container}>
       <Router>
         <Navbar />
 
@@ -29,6 +31,6 @@ export default function App() {
 
         <Footer />
       </Router>
-    </>
+    </main>
   );
 }
