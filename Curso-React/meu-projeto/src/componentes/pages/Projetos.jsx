@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './Projetos.css'
+import styles from'./Projetos.module.css'
 import ProjectForm from "../projeto_form/ProjectForm";
 
 export default function Projetos(){
@@ -27,7 +27,7 @@ export default function Projetos(){
        .catch((error) => console.log(error))
     }
     return(
-      <div className="Project_Container">
+      <div className={styles.Project_Container}>
           <h1>Criar Projetos</h1>
           <p>Crie seu projeto para depois adicionar os serviços.</p>
          <ProjectForm handleSubmit={createPost} btnText ="Criar Projeto"/>

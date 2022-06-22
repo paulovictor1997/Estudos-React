@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Message from "../layout/Message";
-import './Projects.css';
+import styles from './Projects.module.css';
 import Container from '../layout/Container';
 import Load from "../layout/Load";
 import LinkButton from '../layout/LinkButton';
@@ -56,14 +56,14 @@ export default function Projects(){
     }
 
     return(
-        <div className="project_container">
-            <div className="title_container">
+        <div className={styles.project_container}>
+            <div className={styles.title_container}>
                 <h1>Meus Projetos</h1>
                 <LinkButton to='/projetos' text='Criar Projeto'/>
             </div>
             {message && <Message type='success' msg = {message}/>}
             {projectMessage && <Message type='error' msg = {projectMessage}/>}
-            <Container className = 'start'>
+            <Container customClass  = 'start'>
                 {projects.length > 0 && 
                   projects.map((project)=> <ProjectCard name={project.name}
                   budget={project.budget}

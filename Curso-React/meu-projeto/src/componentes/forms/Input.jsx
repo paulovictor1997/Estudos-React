@@ -1,9 +1,9 @@
 import React from "react";
-import "./Input.css";
+import styles from "./Input.module.css";
 
 export default function Input({type,text,name,placeholder,handleOnchange,value}){
     return(
-        <div className="form_control">
+        <div className={styles.form_control}>
             <label htmlFor={name}>{text}:</label>
             <input type={type} 
             name = {name} 

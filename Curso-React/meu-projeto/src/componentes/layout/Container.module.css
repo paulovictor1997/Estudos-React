@@ -5,12 +5,12 @@
     margin: 0 auto;
     flex-wrap: wrap;
     padding: 10px;
+    height: 100vh;
 }    
 
-.min_heigth{ height: 100vh;}
 .start{justify-content: flex-start;}
 
-.colum{
+.column{
     flex-direction: column;
     justify-content: flex-start;
 }

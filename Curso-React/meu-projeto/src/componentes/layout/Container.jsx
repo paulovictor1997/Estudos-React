@@ -1,8 +1,8 @@
 import React from "react";
-import './Container.css'
+import styles from'./Container.module.css';
 
 export default function Container(props){
     return(
-        <div className='container min_heigth'>{props.children}</div>
+        <div className={styles.container} >{props.children}</div>
     )
 }
