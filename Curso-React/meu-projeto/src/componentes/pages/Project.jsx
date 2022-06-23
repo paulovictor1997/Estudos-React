@@ -32,6 +32,7 @@ export default function Project() {
 
   function editPost(project) {
     //console.log(project)
+    setMessage('')
     // Validação do budget
     if (project.budget < project.const) {
       //Mensagem
