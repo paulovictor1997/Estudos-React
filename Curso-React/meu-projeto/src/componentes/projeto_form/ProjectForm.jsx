@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import React from "react";
-import './ProjectForm.css';
+import styles from './ProjectForm.module.css';
 import Input from "../forms/Input";
 import Select from "../forms/Select";
 import SubmitButton from "../forms/SubmitButton";
@@ -49,7 +49,7 @@ export default function ProjectForm({handleSubmit,btnText,projectData}){
    }
 
     return(
-        <form onSubmit={submit}>
+        <form className={styles.form} onSubmit={submit}>
             <Input 
                type="text" 
                text="Nome do projeto"
