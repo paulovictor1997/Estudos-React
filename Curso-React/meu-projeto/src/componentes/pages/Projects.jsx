@@ -64,6 +64,7 @@ export default function Projects(){
             {message && <Message type='success' msg = {message}/>}
             {projectMessage && <Message type='error' msg = {projectMessage}/>}
             <Container customClass  = 'start'>
+            <div className={styles.cardContainer}>
                 {projects.length > 0 && 
                   projects.map((project)=> <ProjectCard name={project.name}
                   budget={project.budget}
@@ -77,9 +78,10 @@ export default function Projects(){
                 {removeLoading && projects.length === 0 && (
                     <p>Nenhum projeto cadastrado.</p>
                 )}
-                
+            </div>    
             </Container>
-        </div>
+            </div>
+        
     )
 }
 
