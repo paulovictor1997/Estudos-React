@@ -4,7 +4,8 @@ import styles from '../projeto_form/ProjectCard.module.css';
 
 export default function ServiceCard({id,name,cots,description,handleRemove}){
     const remove = (e) =>{
-
+        e.preventDefault()
+        handleRemove(id,cots)
     }
 
     return(

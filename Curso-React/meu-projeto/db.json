@@ -31,24 +31,6 @@
       "id": 4
     },
     {
-      "name": "Redes",
-      "budget": "2000",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "const": 100,
-      "services": [
-        {
-          "name": "instalar roteador",
-          "const": "100",
-          "description": "Instalar o Roteador",
-          "id": "c01ca8be-ea57-4859-856a-22d2f38a3108"
-        }
-      ],
-      "id": 5
-    },
-    {
       "name": "Backend - Atualizado",
       "budget": "5500",
       "category": {

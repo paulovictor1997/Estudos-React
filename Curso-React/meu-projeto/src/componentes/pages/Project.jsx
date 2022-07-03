@@ -110,7 +110,29 @@ export default function Project() {
     setShowServiceForm(!showServiceForm)
   }
 
-  function removeService(){
+  function removeService(id,cots){
+     const servicesUpdate = project.services.filter(
+      (service) => service.id !== id
+     )
+
+    const projectUpdate = project;
+
+    projectUpdate.services = servicesUpdate; 
+    projectUpdate.const = parseFloat(projectUpdate.const) - parseFloat(cots)
+
+    fetch(`http://localhost:5000/projects/${projectUpdate.id}`,{
+      method:'PATCH',
+      headers: {
+        'Content-Type' : 'appication/json'
+      },
+      body: JSON.stringify(projectUpdate),
+
+    }).then((resp) => resp.json())
+      .then((data)=>{
+        setProject(projectUpdate)
+        setServices(servicesUpdate)
+      })
+      .catch(error => console.log(error))
 
   }
 
