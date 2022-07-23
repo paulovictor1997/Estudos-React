@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Nunito Sans';
+    font-weight: bold;
+}
+
+#container{
+    width: 100%;
+    height: 100vh;
+}
