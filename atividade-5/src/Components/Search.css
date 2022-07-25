@@ -1,0 +1,47 @@
+--root{
+    --bg:#ffffff;
+    --bg-dark:#2b3945;
+    --text:#2b3945;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    padding: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav form .search-country{
+    display: flex;
+    align-items: center;
+}
+
+nav form input{
+    width: 300px;
+    padding: 10px;
+    box-shadow: 0 10px 0 0  rgba(0, 0, 0, 0.1);
+    border: none;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+nav form input::placeholder{
+    font-size: 18px;
+    color: var(--text);
+}
+
+nav .select-country{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 0 0  rgba(0, 0, 0, 0.1);
+}
+
+nav .select-country select{
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+}

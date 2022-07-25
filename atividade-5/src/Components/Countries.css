@@ -1,0 +1,43 @@
+--root{
+    --bg:#ffffff;
+    --bg-dark:#2b3945;
+    --text:#2b3945;
+}
+
+
+.area{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 40px;
+    color: var(--text);
+}
+
+.area .content-area{
+    width: 300px;
+    padding: 10px;
+}
+
+.area .content-area img{
+    width: 100%;
+    height:200px;
+    border-radius: 5px;
+}
+
+.content-area .description{
+    background-color: #f0ecec;
+    padding: 20px;
+    margin-top: -10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:1200px){
+    .area{
+        display: flex;
+        width: 100%; 
+        flex-direction: column;
+        align-items: center;
+    }
+}
