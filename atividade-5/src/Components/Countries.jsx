@@ -35,8 +35,8 @@ export default function Countries(){
                     <div className="description">
                     <h4>{name.common}</h4>
                     <p> Capital - {capital}</p>
-                    <p> Region - {region}</p>
-                    <p> Continent - {subregion}</p>
+                    <p> Continent - {region}</p>
+                    <p> Region - {subregion}</p>
                     <p> Population - <span>{population}</span></p>
                     </div>
                 </div>
