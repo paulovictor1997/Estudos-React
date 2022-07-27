@@ -7,7 +7,10 @@ export default function Search(){
         <nav>
             <form className='search-country' autoComplete='off'>
                 <FaSistrix/>
-                <input type="search" name='search' id='search' placeholder='Search for a country'  />
+                <input type="search" 
+                name='search' 
+                id='search' 
+                placeholder='Search for a country'  />
             </form>
 
             <div className="select-country">
