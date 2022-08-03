@@ -1,5 +1,6 @@
 import React from "react";
 import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 import './Countries.css';
 
 const url = 'https://restcountries.com/v3.1/all';
@@ -38,6 +39,7 @@ export default function Countries(){
                     <p> Continent - {region}</p>
                     <p> Region - {subregion}</p>
                     <p> Population - <span>{population}</span></p>
+                    <Link to='country'>More Details</Link>
                     </div>
                 </div>
           </article>

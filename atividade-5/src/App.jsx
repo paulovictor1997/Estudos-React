@@ -1,22 +1,15 @@
 import React from 'react';
 import './App.css';
 import Header from './Components/Header';
-import Search from "./Components/Search";
-import Countries from './Components/Countries';
-import {BrowserRouter,Routes,Route} from "react-router-dom";
+import {Outlet} from "react-router-dom";
+import Search from './Components/Search';
 
 function App() {
   return (
     <div id="container">
-      <BrowserRouter>
-        <Header/>
-        <Routes>
-          <Route >
-            <Route path='search' element={<Search/>}/>
-            <Route path='countries' element={<Countries/>}/>
-          </Route>
-        </Routes>
-      </BrowserRouter>  
+     <Header/>
+     <Search/>
+     <Outlet/>
     </div>
   )
 }
