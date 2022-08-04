@@ -36,6 +36,7 @@
 .description a{
     text-decoration: none;
     color: var(--text);
+    margin-top: 15px;
 }
 
 .description a:hover{

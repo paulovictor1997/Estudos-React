@@ -1,0 +1,48 @@
+--root{
+    --bg:#ffffff;
+    --bg-dark:#2b3945;
+    --text:#2b3945;
+}
+
+
+.country-component{
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.country-component .buttonBack{
+    padding: 5px;
+    border: 1px solid rgb(199, 194, 194);
+    width: 100px;
+    box-shadow: 0 10px 0 0  rgba(0, 0, 0, 0.1);
+}
+
+.country-component .buttonBack a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+}
+
+.modal-content{
+    margin-top: 5%;
+}
+
+/*
+.link{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.link .buttonBack{
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+}
+
+*/

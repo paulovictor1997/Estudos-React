@@ -39,7 +39,7 @@ export default function Countries(){
                     <p> Continent - {region}</p>
                     <p> Region - {subregion}</p>
                     <p> Population - <span>{population}</span></p>
-                    <Link to='country'>More Details</Link>
+                    <Link to={`/countries/${name.common}`}>More Details</Link>
                     </div>
                 </div>
           </article>
