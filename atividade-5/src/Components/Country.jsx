@@ -6,16 +6,16 @@ import './Country.css';
 
 export default function Country(){
     const [country,setCountry] = useState([]);
-    const {name} = useParams()
+    const {name} = useParams();
 
     useEffect(()=>{
         const fetchCountryData = async()=>{
             const response = await fetch (`https://restcountries.com/v3.1/name/${name}`);
             const country = await response.json()
-            setCountry(country)
+            setCountry(country);
         }    
 
-        fetchCountryData()
+        fetchCountryData();
     },[])
 
     return(
@@ -25,7 +25,54 @@ export default function Country(){
             </div>
 
             <div className="modal-content">
-                <h1>Country Data</h1>
+              {country.map((c,numericCode)=>{
+                const {
+                    flags,
+                    name,
+                    population,
+                    region,
+                    subregion,
+                    capital,
+                    tld,
+                    borders} 
+                    = c;
+                return(
+                    <article key={numericCode}>
+                        <div className="flag">
+                            <img src={flags.png} alt={name.common} />
+                            <h3>{name.common}</h3>
+                        </div>
+
+                        <div className="modal-details">
+                            <div className="content-area">
+                                <div className="details-area">
+                                    <div className="area-1">
+                                        <p>Population : {population}</p>
+                                        <p>Region : {region}</p>
+                                    </div>
+                                    <div className="area-2">
+                                        <p>Subregion : {subregion}</p>
+                                        <p>Capital : {capital}</p>
+                                        <p>Top Level Domain : {tld}</p>
+                                    </div>
+                                </div>
+
+                                <div className="borders">
+                                        <p>Border:</p>
+                                        {borders.map((border)=>{
+                                           return(
+                                            <ul key={border}>
+                                                <li>{border}</li>
+                                            </ul>
+                                           )
+                                        })}
+                                    </div>
+                            </div>
+                           
+                        </div>
+                    </article>
+                )
+              })} 
             </div>
         </div>
     )
