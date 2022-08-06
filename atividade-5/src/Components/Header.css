@@ -25,3 +25,12 @@ header .toggle{
     gap: 10px;
     color: var(--text);
 }
+
+@media screen and (max-width:1200px){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+}

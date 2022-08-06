@@ -33,8 +33,10 @@ export default function Country(){
                     region,
                     subregion,
                     capital,
+                    altSpellings,
                     tld,
-                    borders} 
+                    area,
+                } 
                     = c;
                 return(
                     <article key={numericCode}>
@@ -49,18 +51,15 @@ export default function Country(){
                                     <div className="area-1">
                                         <p>Population : {population}</p>
                                         <p>Region : {region}</p>
+                                        <p>Oficial : {altSpellings[1]}</p>
                                     </div>
                                     <div className="area-2">
                                         <p>Subregion : {subregion}</p>
                                         <p>Capital : {capital}</p>
                                         <p>Top Level Domain : {tld}</p>
+                                        <p>Area: {area}</p>
                                     </div>
                                 </div>
-
-                                <div className="borders">
-                                        <p>Border:</p>
-                                        
-                                    </div>
                             </div>
                            
                         </div>
@@ -72,3 +71,13 @@ export default function Country(){
     )
 }
 
+/* 
+{borders.map((border)=>{
+    return(
+        <ul key={border}>
+            <li>{border}</li>
+        </ul>
+        )
+    })}
+
+*/
