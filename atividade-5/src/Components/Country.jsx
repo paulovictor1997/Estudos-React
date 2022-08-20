@@ -71,13 +71,3 @@ export default function Country(){
     )
 }
 
-/* 
-{borders.map((border)=>{
-    return(
-        <ul key={border}>
-            <li>{border}</li>
-        </ul>
-        )
-    })}
-
-*/

@@ -14,7 +14,7 @@ export default function Search(){
             </form>
 
             <div className="select-country">
-                <select name="selec" id="select">
+                <select name="select" id="select">
                     <option value="Filter by region">Filter by region</option>
                     <option value="America">America</option>
                     <option value="Africa">Africa</option>
