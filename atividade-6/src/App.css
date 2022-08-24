@@ -1,0 +1,11 @@
+:root{
+  --bg:#ffffff;
+  --bg-dark:#2b3945;
+  --text:#2b3945;
+}
+
+
+.container{
+  width: 100%;
+  height: 100vh;
+}
