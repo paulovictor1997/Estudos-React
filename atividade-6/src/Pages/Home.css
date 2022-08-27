@@ -17,6 +17,7 @@
 .area .content-area{
     width: 300px;
     padding: 10px;
+    border: 1px solid black;
 }
 
 .area .content-area img{
