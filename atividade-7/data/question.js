@@ -11,7 +11,7 @@ const data = [
     },
     {
       question: "Qual desses cavaleiros não é um cavaleiro de bronze?",
-      options: ["Misty ", "Jisty", "Ikki", "Shura"],
+      options: ["Misty", "Jisty", "Ikki", "Shura"],
       answer: "Misty",
     },
     {
