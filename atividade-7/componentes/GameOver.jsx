@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { QuizContext } from '../context/quiz';
 
+import CavsEnd from '../src/img/cavaleiros-2.png';
+
 import "./GameOver.css";
 
 export const GameOver = () => {
@@ -12,6 +14,7 @@ export const GameOver = () => {
     <p>Pontuação : {quizState.score} </p>
     <p>Você acertou {quizState.score} de {quizState.question.length}{""}</p> 
     <button onClick={()=>dispatch({type:"NEW_GAME"})}>Reiniciar</button> 
+    <img src={CavsEnd} alt="Game Over" />
 </div>
   )
 }

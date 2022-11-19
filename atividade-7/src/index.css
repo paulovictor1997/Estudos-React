@@ -20,6 +20,11 @@ body{
     background-repeat: round;
 }
 
+
+img {
+  max-width: 100%;
+}
+
 button {
   font-weight: 700;
   cursor: pointer;
