@@ -5,7 +5,7 @@ import { Welcome } from '../componentes/Welcome';
 import { Question } from '../componentes/Question';
 import { GameOver } from '../componentes/GameOver';
 
-
+//
 import './App.css'
 
 function App() {
