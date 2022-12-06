@@ -1,6 +1,7 @@
 import './App.css'
 
 import {useState} from "react";
+import Effect from './exemplos/Effect';
 
 //USESTATE - Gerenciar o estado de algum valor. Alterando ou consultando.
 
@@ -28,6 +29,11 @@ function App() {
         <p>Number : {number} </p>
         <button onClick={changeNumber}>Mudar número</button>
       </div>
+
+      <div>
+        <Effect/>
+      </div>
+      
     </div>
   )
 }
