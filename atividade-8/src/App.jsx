@@ -2,6 +2,7 @@ import './App.css'
 
 import {useState} from "react";
 import Effect from './exemplos/Effect';
+import Useref from './exemplos/Useref';
 
 //USESTATE - Gerenciar o estado de algum valor. Alterando ou consultando.
 
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <h3>Exemplo useState</h3>
       <h2>Meu nome é : {name}</h2>
       <input type="text" 
       value={name}
@@ -32,6 +34,10 @@ function App() {
 
       <div>
         <Effect/>
+      </div>
+
+      <div>
+        <Useref/>
       </div>
       
     </div>

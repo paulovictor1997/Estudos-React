@@ -49,6 +49,7 @@ const Effect = () => {
 
   return (
     <div>
+      <h3>Exemplo useEffect</h3>
         <div>
             <button onClick={()=> setCount((prevCount)=> prevCount + 1)}>Renderizar</button>
             <p>{count}</p>
