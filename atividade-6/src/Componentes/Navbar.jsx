@@ -2,6 +2,25 @@ import React from 'react';
 import './Navbar.css';
 
 export default function Search(){
+    /*
+    const [data,setData] = useState([]);
+
+    const handleInputChange = (e) =>{
+        e.preventDefault;
+        const {value} = e.target;
+        if(!value) return;
+
+        const url = `https://restcountries.com/v3.1/name?q=${value}`; 
+        
+        fetch(url)
+        .then((response) => response.json())
+        .then(({data})=> setData(data));
+       
+
+    }
+    console.log('data', data);
+    onChange={handleInputChange} (colocar depois do placeholder)
+    */
     return(
         <nav>
             <form className='search-country' autoComplete='off'>
