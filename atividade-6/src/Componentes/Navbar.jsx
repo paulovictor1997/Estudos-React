@@ -6,7 +6,7 @@ export default function Search(){
     const [data,setData] = useState([]);
 
     const handleInputChange = (e) =>{
-        e.preventDefault;
+        e.preventDefault();
         const {value} = e.target;
         if(!value) return;
 
@@ -19,7 +19,6 @@ export default function Search(){
 
     }
     console.log('data', data);
-    onChange={handleInputChange} (colocar depois do placeholder)
     */
     return(
         <nav>
