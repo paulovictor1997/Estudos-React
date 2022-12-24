@@ -37,7 +37,7 @@ export default function Home(){
                     <p> Capital - {capital}</p>
                     <p> Continent - {region}</p>
                     <p> Region - {subregion}</p>
-                    <p> Population - <span>{population}</span></p>
+                    <p> Population - <span>{population.toLocaleString()}</span></p>
                     <Link to={`/countries/${name.common}`}>More Details</Link>
                     </div>
                 </div>

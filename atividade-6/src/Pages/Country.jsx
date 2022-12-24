@@ -56,7 +56,7 @@ export default function Country(){
                                         <p>Subregion : {subregion}</p>
                                         <p>Capital : {capital}</p>
                                         <p>Top Level Domain : {tld}</p>
-                                        <p>Area: {area}</p>
+                                        <p>Area: {area.toLocaleString()}</p>
                                     </div>
                                 </div>
                             </div>
