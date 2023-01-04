@@ -49,7 +49,7 @@ export default function Country(){
                             <div className="content-area">
                                 <div className="details-area">
                                     <div className="area-1">
-                                        <p>Population : {population}</p>
+                                        <p>Population : {population.toLocaleString()}</p>
                                         <p>Region : {region}</p>
                                         <p>Oficial : {altSpellings[1]}</p>
                                     </div>

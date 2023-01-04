@@ -1,12 +1,13 @@
 import { useState,useEffect } from "react";
 import "./CountryArea.css";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 
 const url = 'https://restcountries.com/v3.1/all';
 
 
-export default function CountryArea(){  
+export default function CountryArea({searchfield}){  
 
     const [countries,setCountries] = useState([]);
 
@@ -21,9 +22,13 @@ export default function CountryArea(){
         fetchCountryData()
     },[])
 
+    const countriesToRender = useMemo(()=>{
+        return countries.filter(c => c.name.common.toLowerCase().includes(searchfield.toLowerCase()))
+    },[searchfield, countries])
+
     return(
         <section className="area">
-        {countries.map((country,numericCode)=>{
+        {countriesToRender.map((country,numericCode)=>{
             const {name,
                 population,
                 region,

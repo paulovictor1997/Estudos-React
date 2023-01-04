@@ -5,11 +5,7 @@ import CountryArea from '../componentes/CountryArea';
 export default function Home () {
     
     const [searchfield, setSearchField] = useState('');
-    const [countries, setCountries] = useState([]);
-
-    const filteredCountries = countries.filter(c => c.name.toLowerCase().includes(searchfield.toLowerCase()))
-    console.log(filteredCountries.value)
-
+   
     return(
     <>
         <nav>
@@ -34,7 +30,7 @@ export default function Home () {
             </div>
         </nav>
 
-        <CountryArea countries = {filteredCountries}/>
+        <CountryArea searchfield={searchfield}/>
         
     </>  
     )
