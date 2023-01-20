@@ -2,10 +2,18 @@ import React, {useState} from 'react';
 import "./Home.css";
 import CountryArea from '../componentes/CountryArea';
 
-export default function Home () {
+
+export default function Home ({ onSelect }) {
     
     const [searchfield, setSearchField] = useState('');
-   
+
+    const selectHandler = (e) => {
+        const regionName = e.target.value;
+       // onSelect(regionName);
+       //Tentar usando o useState
+       console.log(regionName)
+      };
+
     return(
     <>
         <nav>
@@ -18,9 +26,9 @@ export default function Home () {
                 />
             </form>
 
-            <div className="select-country">
+            <div className="select-country" onChange={selectHandler}>
                 <select name="select" id="select">
-                    <option value="Filter by region">Filter by region</option>
+                    <option>Filter by region</option>
                     <option value="America">America</option>
                     <option value="Africa">Africa</option>
                     <option value="Asia">Asia</option>
