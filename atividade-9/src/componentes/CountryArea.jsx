@@ -1,7 +1,7 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,useMemo } from "react";
 import "./CountryArea.css";
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
+
 
 
 const url = 'https://restcountries.com/v3.1/all';
@@ -15,7 +15,7 @@ export default function CountryArea({searchfield}){
         const response = await fetch(url);
         const countries = await response.json();
         setCountries(countries)
-        console.log(countries)
+        //console.log(countries)
     }
 
     useEffect(()=>{

@@ -6,7 +6,7 @@ import CountryArea from '../componentes/CountryArea';
 export default function Home () {
     
     const [searchfield, setSearchField] = useState('');
-
+ 
     return(
     <>
         <nav>
@@ -20,12 +20,12 @@ export default function Home () {
             </form>
 
             <div className="select-country">
-                <select name="select" id="select" >
+                <select name="select" id="select">
                     <option>Filter by region</option>
-                    <option value="Americas">America</option>
-                    <option value="Africa">Africa</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
+                    <option value="Americas" >America</option>
+                    <option value="Africa" >Africa</option>
+                    <option value="Asia" >Asia</option>
+                    <option value="Europe" >Europe</option>
                     <option value="Oceania">Oceania</option>
                 </select>
             </div>
