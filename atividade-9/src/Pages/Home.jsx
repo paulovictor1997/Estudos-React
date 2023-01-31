@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./Home.css";
 import CountryArea from '../componentes/CountryArea';
-
+import FilterByRegion from '../componentes/FilterByRegion';
 
 export default function Home () {
     
@@ -19,16 +19,8 @@ export default function Home () {
                 />
             </form>
 
-            <div className="select-country">
-                <select name="select" id="select">
-                    <option>Filter by region</option>
-                    <option value="Americas" >America</option>
-                    <option value="Africa" >Africa</option>
-                    <option value="Asia" >Asia</option>
-                    <option value="Europe" >Europe</option>
-                    <option value="Oceania">Oceania</option>
-                </select>
-            </div>
+            <FilterByRegion filterRegion={FilterByRegion} />
+            
         </nav>
 
         <CountryArea searchfield={searchfield}/>
