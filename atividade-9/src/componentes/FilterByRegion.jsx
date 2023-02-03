@@ -1,15 +1,7 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "../Pages/Home.css";
 
-export default function FilterByRegion({filterRegion}) {
-
-    
-    const fetchCountryByRegion = async (region)=>{
-        const response = await fetch(`https://restcountries.com/v3.1/region/${region}`);
-        const data = await response.json();
-        filterRegion(data)
-        console.log(data);
-    }
+export default function FilterByRegion({setCountries}) {
 
     const regions = [
         {
@@ -31,6 +23,16 @@ export default function FilterByRegion({filterRegion}) {
     ]
 
     
+    const fetchCountryByRegion = async (region)=>{
+        const response = await fetch(`https://restcountries.com/v3.1/region/${region}`);
+        const data = await response.json();
+        setCountries(data)
+        //console.log(data);
+    }
+
+    useEffect(()=>{
+        fetchCountryByRegion();
+    },[])
 
     return (
         <>

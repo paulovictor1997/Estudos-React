@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState,useMemo} from 'react';
 import "./Home.css";
 import CountryArea from '../componentes/CountryArea';
 import FilterByRegion from '../componentes/FilterByRegion';
 
 export default function Home () {
     
+    const [countries,setCountries] = useState([]);
     const [searchfield, setSearchField] = useState('');
+
+    const countriesToRender = useMemo(()=>{
+        return countries.filter(c => c.name.common.toLowerCase().includes(searchfield.toLowerCase()))
+    },[searchfield, countries])
  
     return(
     <>
@@ -19,11 +24,11 @@ export default function Home () {
                 />
             </form>
 
-            <FilterByRegion filterRegion={FilterByRegion} />
+            <FilterByRegion setCountries={setCountries}/>
             
         </nav>
 
-        <CountryArea searchfield={searchfield}/>
+        <CountryArea countries={countriesToRender} setCountries={setCountries}/>
         
     </>  
     )

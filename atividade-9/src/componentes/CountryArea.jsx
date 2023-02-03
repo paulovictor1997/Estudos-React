@@ -1,18 +1,13 @@
-import { useState,useEffect,useMemo } from "react";
+import { useEffect } from "react";
 import "./CountryArea.css";
 import { Link } from "react-router-dom";
 
 
+export default function CountryArea({countries,setCountries}){  
 
-const url = 'https://restcountries.com/v3.1/all';
-
-
-export default function CountryArea({searchfield}){  
-
-    const [countries,setCountries] = useState([]);
 
     const fetchCountryData = async ()=>{
-        const response = await fetch(url);
+        const response = await fetch('https://restcountries.com/v3.1/all');
         const countries = await response.json();
         setCountries(countries)
         //console.log(countries)
@@ -22,13 +17,10 @@ export default function CountryArea({searchfield}){
         fetchCountryData()
     },[])
 
-    const countriesToRender = useMemo(()=>{
-        return countries.filter(c => c.name.common.toLowerCase().includes(searchfield.toLowerCase()))
-    },[searchfield, countries])
 
     return(
         <section className="area">
-        {countriesToRender.map((country,numericCode)=>{
+        {countries.map((country,numericCode)=>{
             const {name,
                 population,
                 region,
