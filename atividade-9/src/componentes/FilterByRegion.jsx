@@ -1,14 +1,17 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import "../Pages/Home.css";
 
 export default function FilterByRegion({setCountries}) {
 
     const regions = [
         {
-            name:"Americas",
+            name:"All"
         },
         {
-            name:"Africa",
+            name:"Americas"
+        },
+        {
+            name:"Africa"
         },
         {
             name:"Asia"
@@ -27,12 +30,8 @@ export default function FilterByRegion({setCountries}) {
         const response = await fetch(`https://restcountries.com/v3.1/region/${region}`);
         const data = await response.json();
         setCountries(data)
-        //console.log(data);
     }
 
-    useEffect(()=>{
-        fetchCountryByRegion();
-    },[])
 
     return (
         <>
@@ -41,7 +40,7 @@ export default function FilterByRegion({setCountries}) {
             value={regions.name}
              onChange={(e) => fetchCountryByRegion(e.target.value)}   
             >
-                <option>Filter by region</option>
+                <option value="All">Filter by region :</option>
                 <option value="Americas" >Americas</option>
                 <option value="Africa" >Africa</option>
                 <option value="Asia" >Asia</option>
