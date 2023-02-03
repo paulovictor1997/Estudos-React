@@ -5,9 +5,6 @@ export default function FilterByRegion({setCountries}) {
 
     const regions = [
         {
-            name:"All"
-        },
-        {
             name:"Americas"
         },
         {
@@ -40,7 +37,7 @@ export default function FilterByRegion({setCountries}) {
             value={regions.name}
              onChange={(e) => fetchCountryByRegion(e.target.value)}   
             >
-                <option value="All">Filter by region :</option>
+                <option>Filter by region :</option>
                 <option value="Americas" >Americas</option>
                 <option value="Africa" >Africa</option>
                 <option value="Asia" >Asia</option>
