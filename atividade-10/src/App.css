@@ -1,0 +1,23 @@
+.App{
+  min-height: 100vh;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  min-width: 50%;
+  min-height: 300px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.contador-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  gap: 2rem;
+}
