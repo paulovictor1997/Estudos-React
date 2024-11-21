@@ -25,6 +25,7 @@ header .toggle{
     gap: 10px;
     color: var(--text);
     cursor: pointer;
+    border: 1px solid black;
 }
 
 @media screen and (max-width:1200px){
@@ -33,5 +34,9 @@ header .toggle{
         flex-direction: column;
         justify-content: center;
         width: 100%;
+    }
+
+    header .toggle{
+      margin-top: 3%;
     }
 }

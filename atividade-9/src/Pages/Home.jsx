@@ -1,7 +1,8 @@
-import React, {useState,useMemo} from 'react';
+import React, {useState,useMemo,useEffect} from 'react';
 import "./Home.css";
 import CountryArea from '../componentes/CountryArea';
 import FilterByRegion from '../componentes/FilterByRegion';
+import Loader from '../componentes/Loader';
 
 export default function Home () {
     
@@ -11,6 +12,22 @@ export default function Home () {
     const countriesToRender = useMemo(()=>{
         return countries.filter(c => c.name.common.toLowerCase().includes(searchfield.toLowerCase()))
     },[searchfield, countries])
+
+    const [isLoading, setLoading] = useState(false)
+
+    const loadUser = async()=>{
+      setLoading(true)
+      const response = await fetch('https://restcountries.com/v3.1/all');
+      const data = await response.json();
+      console.log(data)
+  
+      setLoading(false)
+    }
+
+    useEffect(() => {
+        loadUser();
+    }, []);
+  
  
     return(
     <>
@@ -27,9 +44,8 @@ export default function Home () {
             <FilterByRegion setCountries={setCountries}/>
             
         </nav>
-
-        <CountryArea countries={countriesToRender} setCountries={setCountries}/>
-        
+        {isLoading && <Loader/>}
+        <CountryArea countries={countriesToRender} setCountries={setCountries} loadUser={loadUser}/>
     </>  
     )
 }
