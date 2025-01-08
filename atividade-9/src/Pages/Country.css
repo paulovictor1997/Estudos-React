@@ -81,7 +81,26 @@ article .modal-details .content-area .area-2{
     width: 250px;
 }
 
-@media screen and (max-width:800px){
+.borders{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.borders ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+.borders ul li {
+   border: 1px solid black;
+   padding: 3px;
+}
+
+@media screen and (max-width:1200px){
     .country-component .buttonBack{
         display: flex;
         justify-content: center;
@@ -99,8 +118,14 @@ article .modal-details .content-area .area-2{
    }
 
    article .modal-details .content-area .details-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .borders ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
