@@ -44,7 +44,6 @@ export default function Country() {
                 <div className="buttonBack">
                     <Link to="/"><FaArrowLeft /> Back</Link>
                 </div>
-
                 <div className="modal-content">
                     {country.map((c) => {
                         const {
