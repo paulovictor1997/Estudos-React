@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState,useEffect, use } from "react"
 import ProductCard from "../Componentes/ProductCard"
 import Pagination from "../Componentes/Pagination"
 import "./Home.css"
@@ -7,6 +7,8 @@ import "./Home.css"
 const Home = () => {
   const [products,setProducts] = useState([])//Estado para o armazenamento de produtos
   const [currentPage,setCurrentPage] = useState(1) // Iniciara a listagem da página 1
+  const [categories,setCategories] = useState([])
+  const [selctedCategory,setSelectedCategory] = useState("all")
   const productsPerPage = 8 // Produtos por página
 
   useEffect(()=>{
@@ -17,7 +19,14 @@ const Home = () => {
       setProducts(data)
     })
     .catch((err) => console.error("Erro ao buscar produtos:", err))
-   
+
+    fetch("https://fakestoreapi.com/products/categories")
+    .then((res)=> res.json())
+    .then((data)=>{
+      //console.log(data)
+      setCategories(data)
+    })
+    .catch((err)=> console.log("Erro ao buscar categorias:", err))
   },[])
 
   /* 
