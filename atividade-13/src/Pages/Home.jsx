@@ -9,6 +9,7 @@ const Home = () => {
   const [currentPage,setCurrentPage] = useState(1) // Iniciara a listagem da página 1
   const [categories,setCategories] = useState([])
   const [selectedCategory,setSelectedCategory] = useState("all")
+  const [sortOrder,setSortOrder] = useState("default")
   const productsPerPage = 8 // Produtos por página
 
   useEffect(()=>{
@@ -29,15 +30,24 @@ const Home = () => {
     .catch((err)=> console.log("Erro ao buscar categorias:", err))
   },[])
 
+  //Filtrar produtos
   const filteredProducts = 
     selectedCategory === "all" ? products : products.filter((product) => product.category === selectedCategory)
+
+  /* Ordenação dos produtos pro preço */
+  const sortedProducts = [...filteredProducts].sort((a,b)=>{
+    if(sortOrder === "decres") return a.price - b.price
+    if(sortOrder === "cresc") return b.price - a.price
+    return 0
+  })
+
   /* 
     Lógica que serve para selecionar os produtos corretos 
     para exibir na página atual.
   */
   const indexOfLastProduct = currentPage * productsPerPage
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage
-  const currentProducts = filteredProducts.slice(indexOfFirstProduct,indexOfLastProduct)
+  const currentProducts = sortedProducts.slice(indexOfFirstProduct,indexOfLastProduct)
   
   return (
     <div className="home-container">
@@ -50,13 +60,20 @@ const Home = () => {
           </option>
         ))}
       </select>
+
+      <select onChange={(e)=> setSortOrder(e.target.value)} value={sortOrder}>
+        <option value="default">Ordenar por preço</option>
+        <option value="decres">Menor preço</option>
+        <option value="cresc">Maior preço</option>
+      </select>  
+
       <div className="product-list">
         {currentProducts.map((product)=>(
           <ProductCard key={product.id} product={product}/>
         ))}
       </div>
       <Pagination
-        totalProducts={products.length}
+        totalProducts={sortedProducts.length}
         productsPerPage={productsPerPage}
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
