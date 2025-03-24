@@ -1,4 +1,4 @@
-import { useState,useEffect, use } from "react"
+import { useState,useEffect } from "react"
 import ProductCard from "../Componentes/ProductCard"
 import Pagination from "../Componentes/Pagination"
 import "./Home.css"
@@ -8,7 +8,7 @@ const Home = () => {
   const [products,setProducts] = useState([])//Estado para o armazenamento de produtos
   const [currentPage,setCurrentPage] = useState(1) // Iniciara a listagem da página 1
   const [categories,setCategories] = useState([])
-  const [selctedCategory,setSelectedCategory] = useState("all")
+  const [selectedCategory,setSelectedCategory] = useState("all")
   const productsPerPage = 8 // Produtos por página
 
   useEffect(()=>{
@@ -29,17 +29,27 @@ const Home = () => {
     .catch((err)=> console.log("Erro ao buscar categorias:", err))
   },[])
 
+  const filteredProducts = 
+    selectedCategory === "all" ? products : products.filter((product) => product.category === selectedCategory)
   /* 
     Lógica que serve para selecionar os produtos corretos 
     para exibir na página atual.
   */
   const indexOfLastProduct = currentPage * productsPerPage
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage
-  const currentProducts = products.slice(indexOfFirstProduct,indexOfLastProduct)
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct,indexOfLastProduct)
   
   return (
     <div className="home-container">
       <h2>Lista de Produtos</h2>
+      <select onChange={(e)=> setSelectedCategory(e.target.value)}>
+        <option value="all">All</option>
+        {categories.map((category)=>(
+          <option key={category} value={category}>
+              {category}
+          </option>
+        ))}
+      </select>
       <div className="product-list">
         {currentProducts.map((product)=>(
           <ProductCard key={product.id} product={product}/>

@@ -19,3 +19,12 @@ h2{
     max-width: 900px;
     margin: 0 auto;
 }
+
+select {
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
