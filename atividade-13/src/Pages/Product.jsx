@@ -1,23 +1,37 @@
-import {useState,useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { CartContext } from '../context/CartContext'
+import {useState,useEffect,useContext} from 'react'
 import { FaStar } from "react-icons/fa"
-import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { Link,useParams } from 'react-router-dom'
 
 import './Product.css'
 
-const Product = () => {
+const Product = ({products}) => {
   const {id} = useParams()
+  const {addToCart} = useContext(CartContext)
   const [product,setProduct] = useState(null)
 
   useEffect(()=>{
     fetch(`https://fakestoreapi.com/products/${id}`)
     .then((res) => res.json())
     .then((data)=>{
-      console.log(data)
+      //console.log(data)
       setProduct(data)
     })
     .catch((err) => console.error("Erro ao buscar produto:", err))
   },[id])
+
+  useEffect(() => {
+    if (products && products.length > 0) {
+      const foundProduct = products.find((p) => p.id === parseInt(id));
+      setProduct(foundProduct);
+    }
+  }, [id, products]); 
+
+    const addProduct = (productId) => {
+      addToCart(productId);
+      toast.success('Produto adicionado ao carrinho!') // Notificação de sucesso
+    }
 
   if(!product) return <p>Carregando...</p>
 
@@ -30,6 +44,9 @@ const Product = () => {
       <p>
         <strong>Avaliação :</strong>{product.rating.rate} <FaStar/>
       </p>
+      <button onClick={()=> addProduct(product)} className='btn'>
+        Adicionar ao Carrinho
+      </button>
       <Link to={'/'} className='back'>Voltar</Link>
     </div>
   )

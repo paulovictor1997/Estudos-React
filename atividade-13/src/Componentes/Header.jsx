@@ -12,7 +12,7 @@ const Header = () => {
       </Link>
       </h1>
       <nav className='link'>
-         <Link to="/add" className='linkBtn'><FaCartPlus/></Link>
+         <Link to="/cart" className='linkBtn'><FaCartPlus/></Link>
       </nav>
     </header>
     
