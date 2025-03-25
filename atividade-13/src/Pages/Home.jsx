@@ -34,8 +34,13 @@ const Home = () => {
   const filteredProducts = 
     selectedCategory === "all" ? products : products.filter((product) => product.category === selectedCategory)
 
-  /* Ordenação dos produtos pro preço */
+  
   const sortedProducts = [...filteredProducts].sort((a,b)=>{
+    /*Caso o produto tenha avaliação > 4.5 e o outro não, ele sobe */
+    if(b.rating.rate > 4.5 && a.rating.rate <= 4.5) return 1
+    if(a.rating.rate > 4.5 && b.rating.rate <= 4.5) return -1
+    
+    /* Ordenação dos produtos pro preço */
     if(sortOrder === "decres") return a.price - b.price
     if(sortOrder === "cresc") return b.price - a.price
     return 0

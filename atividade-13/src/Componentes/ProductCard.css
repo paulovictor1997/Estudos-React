@@ -47,4 +47,15 @@
 
 .details-button:hover {
     opacity: 1;
-  }
+}
+
+span{
+    color: #c0a71a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+span.highlight{
+  color: #e67e22;
+  font-size: 16px;
+}
