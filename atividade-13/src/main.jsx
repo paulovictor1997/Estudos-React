@@ -7,7 +7,6 @@ import { CartProvider } from './context/CartContext.jsx'
 import Home from "./Pages/Home.jsx"
 import Product from "./Pages/Product.jsx"
 import Cart from './Pages/Cart.jsx'
-import EditProduct from "./Pages/EditProduct.jsx"
 import NotFound from "./Pages/NotFound.jsx"
 import App from './App.jsx'
 
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
       {
         path:"/product/:id",
         element:<Product/>
-      },
-      {
-        path:"/edit/:id",
-        element:<EditProduct/>
       },
       {
         path:"/cart",
