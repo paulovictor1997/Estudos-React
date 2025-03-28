@@ -57,3 +57,22 @@
 .btn:hover{
   opacity: 1;
 }
+
+@media (max-width: 600px) {
+  .product-detail img {
+    width: 150px; 
+  }
+
+  .product-detail h2 {
+    font-size: 20px; 
+  }
+
+  .product-detail p {
+    font-size: 14px; 
+  }
+
+  .btn {
+    font-size: 14px; 
+    padding: 8px; 
+  }
+}
