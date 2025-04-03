@@ -4,6 +4,7 @@ export const CartContext = createContext()
 
 export const CartProvider = ({children}) =>{
     //Pegar o carrinhho no localStorage o iniciar a aplicação
+    //Add soma dos produtos.
     const storedCart = JSON.parse(localStorage.getItem("cart")) || []
     const [cart,setCart] = useState(storedCart)
 
