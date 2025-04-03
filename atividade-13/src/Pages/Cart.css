@@ -67,6 +67,40 @@
   margin-top: 20px;
 }
 
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-container p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.checkout-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.7s;
+  opacity: 0.8;
+}
+
+.checkout-btn:hover {
+  opacity: 1;
+}
+
+
 .modal {
   position: fixed;
   top: 50%;

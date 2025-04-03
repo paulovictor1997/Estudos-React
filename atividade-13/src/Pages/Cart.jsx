@@ -4,10 +4,12 @@ import { FaTrash,FaCheck } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 
 import "./Cart.css"
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
   const {cart, removeFromCart} = useContext(CartContext)
-  const [confirmDelete, setConfirmDelete] = useState(null)  
+  const [confirmDelete, setConfirmDelete] = useState(null)
+  const navigate = useNavigate()  
 
   const handleDelete = (productId) => {
     setConfirmDelete(productId)
@@ -19,6 +21,11 @@ const Cart = () => {
        setConfirmDelete(null) 
        toast.success('Produto removido do carrinho!')
     }
+  }
+
+  const total = cart.reduce((acc,product)=> acc + product.price,0)
+  const handleCheckout = ()=>{
+    navigate('/invoice')
   }
     
   return (
@@ -40,6 +47,10 @@ const Cart = () => {
                 </div>
             ))
         )}
+        <div className="cart-total">
+          <h3>Total : ${total.toFixed(2)}</h3>
+          <button onClick={handleCheckout} className='checkout-btn'>Finalizar Compra</button>
+        </div>
         {confirmDelete !== null && (
         <>
         <div className='modal-overlay' onClick={() => setConfirmDelete(null)}></div>
