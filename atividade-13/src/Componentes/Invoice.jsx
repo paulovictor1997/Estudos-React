@@ -1,6 +1,7 @@
 import {useContext,useEffect,useState} from 'react'
 import { CartContext } from '../context/CartContext'
 import {useNavigate} from "react-router-dom"
+import { toast } from 'react-toastify'
 import './Invoice.css'
 
 const Invoice = () => {
@@ -27,6 +28,7 @@ const Invoice = () => {
     localStorage.removeItem('invoice')
     clearCart() // Limpa o carrinho
     navigate('/thanks')
+    toast.success('Compra aprovada com sucesso!')
   }
 
   const total = invoiceItems.reduce((sum, item) => sum + item.price, 0).toFixed(2)
