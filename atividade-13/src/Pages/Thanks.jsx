@@ -6,7 +6,7 @@ const Thanks = () => {
   return (
     <div className='thanks-container'>
         <img src={picture} alt="celebration" className="thanks-image"/>
-        <h2>Obrigado por sua compra!</h2>
+        <h2>Obrigado por comprar conosco!</h2>
         <p>Seu pedido foi processado com sucesso. Em breve, você receberá mais detalhes no seu e-mail.</p>
         <Link to={'/'} className='back'>Voltar</Link>
     </div>

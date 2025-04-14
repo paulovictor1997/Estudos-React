@@ -25,6 +25,10 @@ const Cart = () => {
 
   const total = cart.reduce((acc,product)=> acc + product.price,0)
   const handleCheckout = ()=>{
+    if(cart.length === 0){
+      toast.warn('Seu carrinho está vazio !')
+      return
+    }
     navigate('/invoice')
   }
     
