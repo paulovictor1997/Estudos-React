@@ -23,10 +23,10 @@ const Product = ({products}) => {
 
   useEffect(() => {
     if (products && products.length > 0) {
-      const foundProduct = products.find((p) => p.id === parseInt(id));
-      setProduct(foundProduct);
+      const foundProduct = products.find((p) => p.id === parseInt(id))
+      setProduct(foundProduct)
     }
-  }, [id, products]); 
+  }, [id, products]) 
 
     const addProduct = (productId) => {
       addToCart(productId);
