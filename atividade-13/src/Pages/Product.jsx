@@ -29,7 +29,7 @@ const Product = ({products}) => {
   }, [id, products]) 
 
     const addProduct = (productId) => {
-      addToCart(productId);
+      addToCart(productId)
       toast.success('Produto adicionado ao carrinho!') // Notificação de sucesso
     }
 
