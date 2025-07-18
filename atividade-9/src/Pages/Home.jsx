@@ -1,4 +1,4 @@
-import React, {useState,useMemo,useEffect} from 'react';
+import {useState,useMemo,useEffect} from 'react';
 import "./Home.css";
 import CountryArea from '../componentes/CountryArea';
 import FilterByRegion from '../componentes/FilterByRegion';
@@ -17,10 +17,10 @@ export default function Home () {
 
     const loadUser = async()=>{
       setLoading(true)
-      const response = await fetch('https://restcountries.com/v3.1/all');
+      const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital');
       const data = await response.json();
-      console.log(data)
-  
+      //console.log(data)
+      setCountries(data)
       setLoading(false)
     }
 

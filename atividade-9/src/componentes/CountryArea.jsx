@@ -7,10 +7,10 @@ export default function CountryArea({countries,setCountries}){
 
 
     const fetchCountryData = async ()=>{
-        const response = await fetch('https://restcountries.com/v3.1/all');
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,population,region,subregion,capital,flags');
         const countries = await response.json();
         setCountries(countries)
-        //console.log(countries)
+        console.log(countries)
     }
 
     useEffect(()=>{

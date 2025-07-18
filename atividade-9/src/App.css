@@ -3,4 +3,15 @@
     height: 100vh;
 }
 
+body.light header {
+  background-color: white;
+  color: black;
+}
+
+/* Tema escuro */
+body.dark header{
+  background-color: #202c37;
+  color: white;
+}
+
 a{text-decoration: none;}
