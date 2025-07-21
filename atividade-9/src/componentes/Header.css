@@ -10,13 +10,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg);
     width: 100%;
     box-shadow: 0 10px 0 0  rgba(0, 0, 0, 0.1);
 }
 
 header .title{
-    color: var(--text);
+    color: #9c9797;
+    font-weight: bold;
 }
 
 header .toggle{
@@ -24,7 +24,6 @@ header .toggle{
     align-items: center;
     padding: 10px;
     gap: 10px;
-    color: var(--text);
     cursor: pointer;
     border: 1px solid black;
 }

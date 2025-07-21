@@ -1,4 +1,3 @@
-import React from 'react';
 import "../Pages/Home.css";
 
 export default function FilterByRegion({setCountries}) {

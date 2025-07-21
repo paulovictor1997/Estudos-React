@@ -17,7 +17,7 @@
 .area .content-area{
     width: 300px;
     padding: 10px;
-    box-shadow: 13px 7px 5px 0px rgba(0,0,0,0.75);
+    border: 1px solid black;
 }
 
 .area .content-area img{
@@ -26,9 +26,7 @@
     border-radius: 5px;
 }
 
-
 .content-area .description{
-    background-color: #f0ecec;
     padding: 20px;
     margin-top: -10px;
     border-radius: 5px;
@@ -36,8 +34,8 @@
 
 .description a{
     text-decoration: none;
-    color: var(--text);
     margin-top: 15px;
+    color: #9c9797;
 }
 
 .description a:hover{

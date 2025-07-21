@@ -24,8 +24,15 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--text);
+    color: #9c9797;
+    opacity: 0.5;
 }
+
+.country-component .buttonBack a:hover{
+    opacity: 1;
+    transition: .3s all;
+}   
+
 
 .modal-content{
     margin-top: 5%;
@@ -38,7 +45,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    color: var(--text);
 }
 
 article .flag img{
