@@ -1,13 +1,14 @@
-import {useState,useMemo,useEffect} from 'react';
-import "./Home.css";
-import CountryArea from '../componentes/CountryArea';
-import FilterByRegion from '../componentes/FilterByRegion';
-import Loader from '../componentes/Loader';
+import {useState,useMemo,useEffect} from 'react'
+import "./Home.css"
+import CountryArea from '../componentes/CountryArea'
+import FilterByRegion from '../componentes/FilterByRegion'
+import Loader from '../componentes/Loader'
+import ScrollToTopButton from '../componentes/ScrollTopButton'
 
 export default function Home () {
     
-    const [countries,setCountries] = useState([]);
-    const [searchfield, setSearchField] = useState('');
+    const [countries,setCountries] = useState([])
+    const [searchfield, setSearchField] = useState('')
 
     const countriesToRender = useMemo(()=>{
         return countries.filter(c => c.name.common.toLowerCase().includes(searchfield.toLowerCase()))
@@ -25,8 +26,8 @@ export default function Home () {
     }
 
     useEffect(() => {
-        loadUser();
-    }, []);
+        loadUser()
+    }, [])
   
  
     return(
@@ -46,6 +47,7 @@ export default function Home () {
         </nav>
         {isLoading && <Loader/>}
         <CountryArea countries={countriesToRender} setCountries={setCountries} loadUser={loadUser}/>
+        <ScrollToTopButton/>
     </>  
     )
 }
