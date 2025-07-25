@@ -11,31 +11,31 @@ export default function Country() {
     useEffect(() => {
         const fetchCountryData = async () => {
             try {
-                const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
-                if (!response.ok) throw new Error("Country not found");
-                const country = await response.json();
-                setCountry(country);
+                const response = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
+                if (!response.ok) throw new Error("Country not found")
+                const country = await response.json()
+                setCountry(country)
 
                 // Buscar nomes completos das fronteiras
-                const borders = country[0].borders; // Pega as fronteiras do primeiro país
+                const borders = country[0].borders // Pega as fronteiras do primeiro país
                 if (borders) {
                     const borderResponse = await fetch(
                         `https://restcountries.com/v3.1/alpha?codes=${borders.join(",")}`
                     );
-                    const borderData = await borderResponse.json();
+                    const borderData = await borderResponse.json()
                     setBorderCountries(borderData.map(border => border.name.common)); // Armazena os nomes
                     console.log(borderCountries)
                 } else {
-                    setBorderCountries([]); // Nenhuma fronteira
+                    setBorderCountries([]) // Nenhuma fronteira
                 }
             } catch (error) {
                 console.error(error.message);
-                setCountry([]);
-                setBorderCountries([]);
+                setCountry([])
+                setBorderCountries([])
             }
         };
 
-        fetchCountryData();
+        fetchCountryData()
     }, []);
 
     return (
