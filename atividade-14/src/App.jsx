@@ -7,13 +7,11 @@ function App() {
   const [weather,setWeather] = useState(null) 
  
   return (
-    <>
-      <div className="app">
-        <h1>Weather App</h1>
-        <SearchBox setWeather={setWeather}/>
-        {weather && <WeatherCard weather={weather}/>}
-      </div>
-    </>
+   <div className="app-container">
+      <h1 className="app-title">🌤️ Weather App</h1>
+      <SearchBox setWeather={setWeather} />
+      {weather && <WeatherCard weather={weather} />}
+    </div>
   )
 }
 
