@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiSearch, FiX } from "react-icons/fi"
+import Swal from "sweetalert2"
 
 function SearchBox({ setWeather }) {
   const [city, setCity] = useState("")
@@ -12,15 +13,22 @@ function SearchBox({ setWeather }) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`
 
     const response = await fetch(url)
-    if (!response.ok) {
-      alert("Cidade não encontrada!")
-      return;
-    }
-
+      if(!response.ok){
+      Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Cidade não encontrada",
+      text: "Verifique o nome e tente novamente!",
+      showConfirmButton: false,
+      timer: 2000,
+      toast: true,
+    })
+      return
+   }
     const data = await response.json()
     setWeather(data)
     setCity("")
-  };
+  } 
 
   const handleClear = () => setCity("");
 
