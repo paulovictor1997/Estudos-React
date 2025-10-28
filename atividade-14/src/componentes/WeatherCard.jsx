@@ -1,7 +1,7 @@
 import { WiThermometer, WiHumidity, WiStrongWind, WiTime3 , WiSunrise, WiSunset} from "react-icons/wi"
 
 function WeatherCard({ weather }) {
-  const { name, main, weather: weatherInfo, wind, timezone, sys } = weather;
+  const { name, main, weather: weatherInfo, wind, timezone, sys } = weather
   const icon = `https://openweathermap.org/img/wn/${weatherInfo[0].icon}@2x.png`
 
   //Pegar às horas do local, calculo do horário
