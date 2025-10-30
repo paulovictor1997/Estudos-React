@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react"
-import { FaMoon, FaSun } from "react-icons/fa"
+import { FaMoon, FaSun,FaCloudSun } from "react-icons/fa"
 import SearchBox from "./componentes/SearchBox"
 import WeatherCard from "./componentes/WeatherCard"
 import "./index.css"
@@ -25,7 +25,10 @@ function App() {
  
   return (
    <div className="app-container">
-      <h1 className="app-title">🌤️ Weather App</h1>
+      <h1 className="app-title">
+        <div className="icon"><FaCloudSun/></div>
+        Weather App
+      </h1>
       <button
           aria-label="Alternar modo escuro"
           className="mode-toggle"
