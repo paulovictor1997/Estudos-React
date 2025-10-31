@@ -25,17 +25,17 @@ function App() {
  
   return (
    <div className="app-container">
-      <h1 className="app-title">
-        <div className="icon"><FaCloudSun/></div>
-        Weather App
-      </h1>
-      <button
+      <div className="app-content">
+      <div className="icon"><FaCloudSun/></div>
+        <h1 className="title">Weather App</h1>
+         <button
           aria-label="Alternar modo escuro"
           className="mode-toggle"
           onClick={toggleDarkMode}
       >
          {darkMode ? <FaSun /> : <FaMoon />}
       </button>
+      </div>
       <SearchBox setWeather={setWeather} />
       {weather && <WeatherCard weather={weather} />}
     </div>
@@ -43,3 +43,4 @@ function App() {
 }
 
 export default App
+//<div className="icon"><FaCloudSun/></div>

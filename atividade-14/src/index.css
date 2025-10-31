@@ -18,12 +18,22 @@
 
 body {
   background: var(--bg);
+  color: var(--text);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+body.dark {
+  background: #0f1724;
+  color: #e6eef8;
+}
+
 
 .app-container {
   text-align: center;
@@ -31,18 +41,25 @@ body {
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 25px var(--shadow);
-  width: 370px;
+  max-width: 420px;
 }
 
-.app-title {
-  color: var(--text2);
+.app-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
   gap: 10px;
   margin-bottom: 1.5rem;
+}
+
+.title{
+  color: var(--text2);  
   font-weight: 600;
+}
+
+.icon {
+  color: var(--text2);
 }
 
 .search-box {
@@ -95,7 +112,7 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 
 .search-btn:hover {
