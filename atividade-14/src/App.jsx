@@ -43,4 +43,3 @@ function App() {
 }
 
 export default App
-//<div className="icon"><FaCloudSun/></div>
