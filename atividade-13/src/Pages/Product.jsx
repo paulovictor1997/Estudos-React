@@ -40,8 +40,8 @@ const Product = ({products}) => {
       <img src={product.image} alt={product.title} />
       <h2>{product.title}</h2>
       <p>{product.description}</p>
-      <p><strong>Preço :</strong>{product.price}</p>
-      <p>
+      <p><strong>Preço :</strong>{product.price} R$</p>
+      <p className='star'>
         <strong>Avaliação :</strong>{product.rating.rate} <FaStar/>
       </p>
       <button onClick={()=> addProduct(product)} className='btn'>
