@@ -1,59 +1,101 @@
-import { useState, useMemo, useEffect } from 'react';
-import { BiError } from 'react-icons/bi';
-import "./Home.css";
+import { useState, useMemo, useEffect, useCallback } from 'react';
+import { BiSearch, BiError } from 'react-icons/bi';
+import { MdOutlineFilterAlt } from 'react-icons/md';
+import './Home.css';
 import CountryArea from '../componentes/CountryArea';
-import FilterByRegion from '../componentes/FilterByRegion';
 import Loader from '../componentes/Loader';
+import ScrollToTopButton from '../componentes/ScrollTopButton';
+
+const REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 export default function Home() {
-  const [countries, setCountries] = useState([])
-  const [searchfield, setSearchField] = useState('')
-  const [isLoading, setLoading] = useState(false)
+  const [allCountries, setAllCountries] = useState([]);
+  const [searchField, setSearchField] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const loadAllCountries = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        'https://restcountries.com/v3.1/all?fields=name,flags,region,subregion,population,capital'
+      );
+      const data = await response.json();
+      setAllCountries(data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => { loadAllCountries(); }, [loadAllCountries]);
 
   const countriesToRender = useMemo(() => {
-    return countries.filter(c =>
-      c.name.common.toLowerCase().includes(searchfield.toLowerCase())
-    );
-  }, [searchfield, countries])
+    return allCountries.filter(c => {
+      const matchSearch = c.name.common.toLowerCase().includes(searchField.toLowerCase());
+      const matchRegion = selectedRegion ? c.region === selectedRegion : true;
+      return matchSearch && matchRegion;
+    });
+  }, [searchField, selectedRegion, allCountries]);
 
-  const loadUser = async () => {
-    setLoading(true);
-    const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital');
-    const data = await response.json();
-    setCountries(data)
-    setLoading(false)
+  const handleReset = () => {
+    setSearchField('');
+    setSelectedRegion('');
   };
-
-  useEffect(() => {
-    loadUser()
-  }, [])
 
   return (
     <>
-      <nav>
-        <form className='search-country' autoComplete='off'>
+      <nav className="controls-bar">
+        <div className="search-wrapper">
+          <BiSearch className="search-icon" />
           <input
+            className="search-input"
             type="search"
-            name='search'
-            id='search'
-            placeholder='Search for a country'
-            onChange={(e) => setSearchField(e.target.value)}
+            placeholder="Search for a country…"
+            value={searchField}
+            onChange={e => setSearchField(e.target.value)}
+            autoComplete="off"
           />
-        </form>
+        </div>
 
-        <FilterByRegion setCountries={setCountries} />
+        <div className="select-wrapper">
+          <select
+            className="region-select"
+            value={selectedRegion}
+            onChange={e => setSelectedRegion(e.target.value)}
+          >
+            <option value="">All Regions</option>
+            {REGIONS.map(r => (
+              <option key={r} value={r}>{r}</option>
+            ))}
+          </select>
+          <MdOutlineFilterAlt className="select-arrow" />
+        </div>
       </nav>
+
+      {!isLoading && (
+        <p className="results-info">
+          {countriesToRender.length} {countriesToRender.length === 1 ? 'country' : 'countries'} found
+          {selectedRegion ? ` in ${selectedRegion}` : ''}
+          {searchField ? ` matching "${searchField}"` : ''}
+        </p>
+      )}
 
       {isLoading && <Loader />}
 
       {!isLoading && countriesToRender.length === 0 ? (
-        <div className="not-found-message">
-          <BiError className="error-icon" />
-          <p>There is no country with this name.</p>
+        <div className="not-found">
+          <BiError />
+          <p>No countries found</p>
+          <span>Try adjusting your search or filter</span>
+          <button className="reset-btn" onClick={handleReset}>Clear filters</button>
         </div>
       ) : (
-        <CountryArea countries={countriesToRender} setCountries={setCountries} loadUser={loadUser} />
+        !isLoading && <CountryArea countries={countriesToRender} />
       )}
+
+      <ScrollToTopButton />
     </>
   );
 }

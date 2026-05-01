@@ -1,12 +1,10 @@
-import {FaSpinner} from "react-icons/fa"
-import "./Loader.css"
+import './Loader.css';
 
-const Loader = () => {
+export default function Loader() {
   return (
-    <div>
-        <FaSpinner className="loader" style={{color:"#000000"}}/>
+    <div className="loader-wrap">
+      <div className="loader-spinner" />
+      <span className="loader-text">Loading countries…</span>
     </div>
-  )
+  );
 }
-
-export default Loader
